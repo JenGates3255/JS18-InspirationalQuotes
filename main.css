@@ -1,0 +1,36 @@
+.title {
+	/*color: #47B2B2;*/
+}
+.mainContainer{
+	border: thin solid black; 
+	position: relative;
+	padding: 10px;
+	width: 90%;
+	margin: auto;
+	background-color: #40A0A0;
+	color: black;
+	
+}
+
+form {
+	width: 100px; 
+	display: inline-table;
+
+
+}
+
+.quote{
+
+}
+.author{
+
+}
+
+.secondBody{
+	border: thin solid black; 
+	position: relative;
+	padding: 10px;
+	width: 90%;
+	margin: auto;
+
+}

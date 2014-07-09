@@ -2,12 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Untitled</title>
+  <title>JS18 Insp. Quotes</title>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+	<div>
+   		 <h3 class="title"> Inspirational Quotes </h3>
+	</div>
+	<div class="mainContainer">
+	  	
+		<h2> Quotes: </h2>
+		<form action="demo_form.asp" method="get">
+  			Quote: <textarea class="quote"name="quotes" placeholder="Enter in your inspiration" required></textarea> <br>
+  			Author name: <input class = "author" type="text" name="lname" required><br>
+  			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+
+	<div class="secondBody">
+  		<h4>Previous Quotes:</h4>
+ 		<p> "Meow Meow Meow" -Zoey cat </p>
+ 		<button class="undoDelete">undo delete</button>
+	</div>	
 	
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="main.js"></script>
 
