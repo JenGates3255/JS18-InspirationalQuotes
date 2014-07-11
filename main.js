@@ -14,7 +14,6 @@ var $undo = $('.undoDelete');
  var randomQuoteArray = [];
 
 
-
 var newQuote = function(quote, author){
  //concatinate two elements into one var - creating a new <p> within the dom 
  // adding author and quote
@@ -22,6 +21,7 @@ var newQuote = function(quote, author){
  //1 way to concatenate 	
  	//var element = $("<p>" + quote + " - " + author + " <button> delete </button></p>");
  //2 way to string concatenate  (join multiple strings)
+ //
  	var fullQuote = quote + " -" + author;
  	var $element = $("<button>", {
  		'class': 'element',
@@ -30,25 +30,29 @@ var newQuote = function(quote, author){
  		).text(fullQuote);
  //	
  //3 way to string concatenate
- //
- //
+ 
+
 // select author on click 
 $element.on('click', function(){
+	var lightBox = $('<div class="lightboxstyle">');
+	var textBox = $('<div class="box"><div class="close">x</div></div>');
+	var fullLightBox = lightBox.append(textBox);
+	$('#wrapper').append(lightBox);
+
 	var author = $(this).attr('data-author');
-	// Attribute selector: .element[attributeName="value"]
 	var $quotes = $('.element[data-author="' + author + '"]');
 
-// if author is = to 'this(clicked)'
-	// for (var i = 0; i < quotes.length; i++) {
-	// 		alert(quotes.eq(i).attr('data-quote'));
-	// };
+		 $('.close').on('click', function(){
+		fullLightBox.hide();
+	})	
+ // return all quotes by selected author	
 	var quotes = [];
 	$quotes.each(function (index, element) {
-		quotes.push($(element).attr('data-quote'));
+		// quotes.push(($element).attr('data-quote'));
+		// 
+		 textBox.append($(element).data("quote"));
+			console.log($(element).data("quote"));
 	});
-
-	console.log(quotes);
-	
 });
 // 
 // alert in seperate window
@@ -85,23 +89,35 @@ $element.on('click', function(){
  			});
  		});
 
-	// Add element to page
- 	 $(".secondBody").append($element);
-
- 	 // Add element to random array
- 	 randomQuoteArray.push(fullQuote);
+						// Add element to page
+ 	 					$(".secondBody").append($element);
+ 	 			// Add inout to random array
+ 	 			randomQuoteArray.push(fullQuote);
 }; 
+ // ({'position':fixed,'top':0,'left':0,'width':100%,'height':100%,'text-align':center,'background':rgba(0,0,0,.7)});
 
 $('#random').on('click', function(){
-	var randomQuote = randomQuoteArray[Math.floor(Math.random()*randomQuoteArray.length)];
-	alert(randomQuote);
+	var lightBox = $('<div class="lightboxstyle">');
+	var textBox = $('<div class="box"><div class="close">x</div></div>');
+	var fullLightBox = lightBox.append(textBox);
+	$('#wrapper').append(lightBox);
+	
+	var randomQuote = randomQuoteArray[Math.floor(Math.random()*randomQuoteArray.length)]
+		textBox.append(randomQuote);
+		console.log(randomQuote);
+
+	$('.close').on('click', function(){
+		fullLightBox.hide();
+	})	
 });
 
 // 
 // 
 	newQuote("hello", "world");
 	newQuote('My name is Zoey', 'Zoey');
-	newQuote('I am black and furry', 'Zoey');
+	newQuote('I am a cat', 'Zoey');
+	newQuote('I lay in the sun', 'Zoey')
+
 
 $('form').on('submit', function (event) {
 	event.preventDefault();

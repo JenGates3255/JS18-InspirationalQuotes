@@ -1,6 +1,57 @@
 .title {
 	/*color: #47B2B2;*/
 }
+body{
+	margin: 0;
+	padding: 0;
+	background: #efefef;
+	text-align:center;
+}
+
+
+#wrapper{
+	width: 80%;
+	margin:0 auto;
+	background:#fff;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-top: none;
+	padding: 25px;
+	 /*Let's add some CSS3 styles, these will degrade gracefully in older browser and IE*/
+    /*border-radius:0 0 5px 5px;
+    -moz-border-radius:0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px; 
+    box-shadow:0 0 5px #ccc;
+    -moz-box-shadow:0 0 5px #ccc;
+    -webkit-box-shadow:0 0 5px #ccc;*/
+}
+.box{
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	width:500px;
+	height: 300px;
+	display: block;
+	background:#ffffff;
+	padding: 10px;
+}
+.close{
+	float: right;
+	margin-right: 6px;
+	cursor: pointer;
+}
+
+.lightboxstyle{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: rgba(0,0,0,.7);
+}
+
+
 .mainContainer{
 	border: thin solid black; 
 	position: relative;
@@ -9,22 +60,18 @@
 	margin: auto;
 	background-color: #40A0A0;
 	color: black;
-	
 }
 
 form {
 	width: 100px; 
 	display: inline-table;
-
-
 }
 
 .quote{
-
 }
 .author{
-
 }
+
 button.element {
 	background: none;
 	border: none;
@@ -38,7 +85,6 @@ button.element {
 	padding: 10px;
 	width: 90%;
 	margin: auto;
-
 }
 
 .star {
@@ -57,3 +103,4 @@ button.element {
 .star.selected {
 	font-size: 2em;
 }
+
